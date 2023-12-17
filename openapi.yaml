@@ -1,0 +1,313 @@
+openapi: 3.0.0
+info:
+  title: StarWars API
+  version: 1.0.0
+  description: >-
+    API para consultar información de la Saga de Star Wars y registrar
+    personajes.
+paths:
+  /planetas/{id}:
+    get:
+      summary: Obtener Planeta por ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: ID del planeta
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Planeta encontrado
+          content:
+            application/json:
+              example:
+                planeta:
+                  nombre: Tatooine
+                  periodo_rotacion: '23'
+                  periodo_orbital: '304'
+                  diametro: '10465'
+                  clima: arid
+                  gravedad: 1 standard
+                  terreno: desert
+                  agua_superficial: '1'
+                  poblacion: '200000'
+                  residentes:
+                    - https://swapi.py4e.com/api/people/1/
+                    - https://swapi.py4e.com/api/people/2/
+                    - https://swapi.py4e.com/api/people/4/
+                    - https://swapi.py4e.com/api/people/6/
+                    - https://swapi.py4e.com/api/people/7/
+                    - https://swapi.py4e.com/api/people/8/
+                    - https://swapi.py4e.com/api/people/9/
+                    - https://swapi.py4e.com/api/people/11/
+                    - https://swapi.py4e.com/api/people/43/
+                    - https://swapi.py4e.com/api/people/62/
+                  peliculas:
+                    - https://swapi.py4e.com/api/films/1/
+                    - https://swapi.py4e.com/api/films/3/
+                    - https://swapi.py4e.com/api/films/4/
+                    - https://swapi.py4e.com/api/films/5/
+                    - https://swapi.py4e.com/api/films/6/
+                  creado: '2014-12-09T13:50:49.641000Z'
+                  editado: '2014-12-20T20:58:18.411000Z'
+                  url: https://swapi.py4e.com/api/planets/1/
+  /peliculas/{id}:
+    get:
+      summary: Obtener Película por ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: ID de la película
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Película encontrada
+          content:
+            application/json:
+              example:
+                pelicula:
+                  titulo: A New Hope
+                  numero_episodio: 4
+                  apertura: "It is a period of civil war.\r\nRebel spaceships, striking\r\nfrom a hidden base, have won\r\ntheir first victory against\r\nthe evil Galactic Empire.\r\n\r\nDuring the battle, Rebel\r\nspies managed to steal secret\r\nplans to the Empire's\r\nultimate weapon, the DEATH\r\nSTAR, an armored space\r\nstation with enough power\r\nto destroy an entire planet.\r\n\r\nPursued by the Empire's\r\nsinister agents, Princess\r\nLeia races home aboard her\r\nstarship, custodian of the\r\nstolen plans that can save her\r\npeople and restore\r\nfreedom to the galaxy...."
+                  director: George Lucas
+                  productor: Gary Kurtz, Rick McCallum
+                  fecha_estreno: '1977-05-25'
+                  personajes:
+                    - https://swapi.py4e.com/api/people/1/
+                    - https://swapi.py4e.com/api/people/2/
+                    - https://swapi.py4e.com/api/people/3/
+                    - https://swapi.py4e.com/api/people/4/
+                    - https://swapi.py4e.com/api/people/5/
+                    - https://swapi.py4e.com/api/people/6/
+                    - https://swapi.py4e.com/api/people/7/
+                    - https://swapi.py4e.com/api/people/8/
+                    - https://swapi.py4e.com/api/people/9/
+                    - https://swapi.py4e.com/api/people/10/
+                    - https://swapi.py4e.com/api/people/12/
+                    - https://swapi.py4e.com/api/people/13/
+                    - https://swapi.py4e.com/api/people/14/
+                    - https://swapi.py4e.com/api/people/15/
+                    - https://swapi.py4e.com/api/people/16/
+                    - https://swapi.py4e.com/api/people/18/
+                    - https://swapi.py4e.com/api/people/19/
+                    - https://swapi.py4e.com/api/people/81/
+                  planetas:
+                    - https://swapi.py4e.com/api/planets/1/
+                    - https://swapi.py4e.com/api/planets/2/
+                    - https://swapi.py4e.com/api/planets/3/
+                  nave_espaciales:
+                    - https://swapi.py4e.com/api/starships/2/
+                    - https://swapi.py4e.com/api/starships/3/
+                    - https://swapi.py4e.com/api/starships/5/
+                    - https://swapi.py4e.com/api/starships/9/
+                    - https://swapi.py4e.com/api/starships/10/
+                    - https://swapi.py4e.com/api/starships/11/
+                    - https://swapi.py4e.com/api/starships/12/
+                    - https://swapi.py4e.com/api/starships/13/
+                  vehiculos:
+                    - https://swapi.py4e.com/api/vehicles/4/
+                    - https://swapi.py4e.com/api/vehicles/6/
+                    - https://swapi.py4e.com/api/vehicles/7/
+                    - https://swapi.py4e.com/api/vehicles/8/
+                  especies:
+                    - https://swapi.py4e.com/api/species/1/
+                    - https://swapi.py4e.com/api/species/2/
+                    - https://swapi.py4e.com/api/species/3/
+                    - https://swapi.py4e.com/api/species/4/
+                    - https://swapi.py4e.com/api/species/5/
+                  creado: '2014-12-10T14:23:31.880000Z'
+                  editado: '2014-12-20T19:49:45.256000Z'
+                  url: https://swapi.py4e.com/api/films/1/
+  /personas/{id}:
+    get:
+      summary: Obtener Persona por ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: ID de la persona
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Persona encontrada
+          content:
+            application/json:
+              example:
+                persona:
+                  nombre: Luke Skywalker
+                  altura: 172
+                  masa: 77
+                  color_pelo: blond
+                  color_piel: fair
+                  color_ojos: blue
+                  año_nacimiento: 19BBY
+                  genero: male
+                  planeta_natal: https://swapi.py4e.com/api/planets/1/
+                  peliculas:
+                    - https://swapi.py4e.com/api/films/1/
+                    - https://swapi.py4e.com/api/films/2/
+                    - https://swapi.py4e.com/api/films/3/
+                    - https://swapi.py4e.com/api/films/6/
+                    - https://swapi.py4e.com/api/films/7/
+                  especies:
+                    - https://swapi.py4e.com/api/species/1/
+                  vehiculos:
+                    - https://swapi.py4e.com/api/vehicles/14/
+                    - https://swapi.py4e.com/api/vehicles/30/
+                  naves:
+                    - https://swapi.py4e.com/api/starships/12/
+                    - https://swapi.py4e.com/api/starships/22/
+                  creado: '2014-12-09T13:50:51.644000Z'
+                  editado: '2014-12-20T21:17:56.891000Z'
+                  url: https://swapi.py4e.com/api/people/1/
+  /especies/{id}:
+    get:
+      summary: Obtener Especie por ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: ID de la especie
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Especie encontrada
+          content:
+            application/json:
+              example:
+                especie:
+                  nombre: Human
+                  clasificacion: mammal
+                  designacion: sentient
+                  altura_promedio: 180
+                  colores_de_piel: caucasian, black, asian, hispanic
+                  colores_de_cabello: blonde, brown, black, red
+                  colores_de_ojos: brown, blue, green, hazel, grey, amber
+                  esperanza_de_vida_promedio: 120
+                  planeta_natal: https://swapi.py4e.com/api/planets/9/
+                  lengua: Galactic Basic
+                  personas:
+                    - https://swapi.py4e.com/api/people/1/
+                    - https://swapi.py4e.com/api/people/4/
+                    - https://swapi.py4e.com/api/people/5/
+                    - https://swapi.py4e.com/api/people/6/
+                    - https://swapi.py4e.com/api/people/7/
+                    - ... (lista completa)
+                  peliculas:
+                    - https://swapi.py4e.com/api/films/1/
+                    - https://swapi.py4e.com/api/films/2/
+                    - https://swapi.py4e.com/api/films/3/
+                    - https://swapi.py4e.com/api/films/4/
+                    - https://swapi.py4e.com/api/films/5/
+                    - https://swapi.py4e.com/api/films/6/
+                    - https://swapi.py4e.com/api/films/7/
+                  creado: '2014-12-10T13:52:11.567000Z'
+                  editado: '2014-12-20T21:36:42.136000Z'
+                  url: https://swapi.py4e.com/api/species/1/
+  /naves/{id}:
+    get:
+      summary: Obtener Nave por ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: ID de la nave
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Nave espacial encontrada
+          content:
+            application/json:
+              example:
+                nave:
+                  nombre: Death Star
+                  modelo_o_nombre_oficial: DS-1 Orbital Battle Station
+                  fabricante_s: >-
+                    Imperial Department of Military Research, Sienar Fleet
+                    Systems
+                  costo_en_creditos_galácticos: 1000000000000
+                  longitud_en_metros: 120000
+                  velocidad_máxima_en_atmósfera: n/a
+                  tripulación_requerida: 342,953
+                  pasajeros_no_esenciales: 843,342
+                  capacidad_máxima_de_carga_en_kilogramos: 1000000000000
+                  duración_máxima_de_los_consumibles_para_la_tripulación: 3 years
+                  clase_de_hiperimpulsor: 4
+                  distancia_máxima_en_Megalights_por_hora_estándar: 10
+                  clase_de_nave_espacial: Deep Space Mobile Battlestation
+                  pilotos_que_la_han_tripulado: []
+                  películas_en_las_que_aparece:
+                    - https://swapi.py4e.com/api/films/1/
+                  fecha_de_creación: '2014-12-10T16:36:50.509000Z'
+                  fecha_de_edición: '2014-12-20T21:26:24.783000Z'
+                  URL_del_recurso: https://swapi.py4e.com/api/starships/9/
+  /vehiculos/{id}:
+    get:
+      summary: Obtener Vehículo por ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: ID del vehículo
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Vehículo encontrado
+          content:
+            application/json:
+              example:
+                vehiculo:
+                  nombre: Sand Crawler
+                  modelo_o_nombre_oficial: Digger Crawler
+                  fabricante_s: Corellia Mining Corporation
+                  costo_en_creditos_galácticos: 150000
+                  longitud_en_metros: 36.8
+                  velocidad_máxima_en_atmósfera: 30
+                  tripulación_requerida: 46
+                  pasajeros_no_esenciales: 30
+                  capacidad_máxima_de_carga_en_kilogramos: 50000
+                  duración_máxima_de_los_consumibles_para_la_tripulación: 2 months
+                  clase_del_vehiculo: wheeled
+                  pilotos_que_la_han_tripulado: []
+                  películas_en_las_que_aparece:
+                    - https://swapi.py4e.com/api/films/1/
+                    - https://swapi.py4e.com/api/films/5/
+                  creado: '2014-12-10T15:36:25.724000Z'
+                  editado: '2014-12-20T21:30:21.661000Z'
+                  URL_del_recurso: https://swapi.py4e.com/api/vehicles/4/
+  /personajes:
+    get:
+      summary: Obtener todos los Personajes
+      responses:
+        '200':
+          description: Personaje encontrado
+          content:
+            application/json:
+              example:
+                datosTabla:
+                  - id: e1c39a76-e4a3-4cd7-b188-397a36b293bd
+                    nombre: Juan
+                    apellido: Huamani
+                    edad: 27
+  /registrar-personaje:
+    post:
+      summary: Registrar un nuevo Personaje
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example: // ... Ejemplo de cuerpo de la solicitud JSON ...
+      responses:
+        '200':
+          description: Datos registrados correctamente
+          content:
+            application/json:
+              example:
+                mensaje: Datos registrados correctamente en la tabla Personajes

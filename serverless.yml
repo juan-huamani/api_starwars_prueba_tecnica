@@ -1,0 +1,92 @@
+# Welcome to Serverless!
+# Happy Coding!
+
+service: api-prueba-juan
+
+app: api-prueba-juan
+org: juanhuamani
+
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:*
+      Resource:
+        - arn:aws:dynamodb:us-east-1:064237448200:table/personajes
+  apiGateway:
+    shouldStartNameWithService: true
+
+plugins:
+  - serverless-offline
+
+functions:
+  getPlanet:
+    handler: src/getSwapi.getPlanet
+    events:
+      - http:
+          path: /planetas/{id}
+          method: get
+  getFilm:
+    handler: src/getSwapi.getFilm
+    events:
+      - http:
+          path: /peliculas/{id}
+          method: get
+  getPeople:
+    handler: src/getSwapi.getPeople
+    events:
+      - http:
+          path: /personas/{id}
+          method: get
+  getSpecie:
+    handler: src/getSwapi.getSpecie
+    events:
+      - http:
+          path: /especies/{id}
+          method: get
+  getStarship:
+    handler: src/getSwapi.getStarship
+    events:
+      - http:
+          path: /naves/{id}
+          method: get
+  getVehicle:
+    handler: src/getSwapi.getVehicle
+    events:
+      - http:
+          path: /vehiculos/{id}
+          method: get
+  getPersonajes:
+    handler: src/getPersonajes.getPersonajes
+    events:
+      - http:
+          path: /personajes
+          method: get
+          
+  createPersonaje:
+    handler: src/createPersonaje.createPersonaje
+    events:
+      - http:
+          path: /registrar-personaje
+          method: post
+
+resources:
+  Resources:
+    personajes:
+      Type: 'AWS::DynamoDB::Table'
+      Properties:
+        TableName: personajes 
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 5
+          WriteCapacityUnits: 5
