@@ -46,7 +46,7 @@ La StarWars API permite consultar información de la Saga de Star Wars, incluyen
   [GET /naves/{id}](https://ori6o78k20.execute-api.us-east-1.amazonaws.com/dev/naves/{id})
   
   Ejemplo de uso:
-  [GET https://ori6o78k20.execute-api.us-east-1.amazonaws.com/dev/naves/9](https://ori6o78k20.execute-api.us-east-1.amazonaws.com/dev/naves/1)
+  [GET https://ori6o78k20.execute-api.us-east-1.amazonaws.com/dev/naves/9](https://ori6o78k20.execute-api.us-east-1.amazonaws.com/dev/naves/9)
 
 #### Vehículos
 
@@ -54,7 +54,7 @@ La StarWars API permite consultar información de la Saga de Star Wars, incluyen
   [GET /vehiculos/{id}](https://ori6o78k20.execute-api.us-east-1.amazonaws.com/dev/vehiculos/{id})
   
   Ejemplo de uso:
-  [GET https://ori6o78k20.execute-api.us-east-1.amazonaws.com/dev/vehiculos/4](https://ori6o78k20.execute-api.us-east-1.amazonaws.com/dev/vehiculos/1)
+  [GET https://ori6o78k20.execute-api.us-east-1.amazonaws.com/dev/vehiculos/4](https://ori6o78k20.execute-api.us-east-1.amazonaws.com/dev/vehiculos/4)
 
 ### Operaciones Adicionales
 
